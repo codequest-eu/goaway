@@ -59,6 +59,8 @@ module GoAway
 
   def current_user
     super || raise(GoAway::CurrentUserError)
+  rescue NoMethodError
+    raise(GoAway::CurrentUserError)
   end
 
   def go_away!
