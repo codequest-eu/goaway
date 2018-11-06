@@ -1,0 +1,12 @@
+version: '2'
+services:
+  main:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/goaway
+      - bundle_cache:/bundle
+
+volumes:
+  bundle_cache:
+  public:
